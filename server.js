@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 var path = require('path');
 
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 4000;
 
  
 
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
  
-app.get('/searchMovie', function (req, res) {
+app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
     
 });
