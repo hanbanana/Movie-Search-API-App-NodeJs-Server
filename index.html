@@ -190,7 +190,7 @@
                 var pTwo = $("<h5>").text("Released: " + released);
                 movieDiv.append(pTwo);
                 var plot = response.Plot;
-                var pThree = $("<h5>").text("Plot: " + plot);
+                var pThree = $("<h5>").text("Story: " + plot);
                 movieDiv.append(pThree);
 
 
@@ -212,6 +212,18 @@
             event.preventDefault();
 
             displayMovieInfo();
+        });
+
+        $('#movie-input').keypress(function (e) {
+            if (e.keyCode == 13) {
+                //   $('#searchButton').click();
+                $("#searchId").hide();
+                $("#newSearchId").show();
+
+                event.preventDefault();
+
+                displayMovieInfo();
+            };
         });
 
         $("#newSearchButton").on("click", function (event) {
